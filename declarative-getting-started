@@ -17,5 +17,13 @@ pipeline {
                 echo 'Deploying....'
             }
         }
+        stage('String Interpolation') {
+            steps {
+                // Only the latter string will support the dollar-sign ($) based string interpolation
+                def username = 'Jenkins'
+                echo 'Hello Mr. ${username}'
+                echo "I said, Hello Mr. ${username}"
+            }
+        }
     }
 }
